@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.BookMyShow.Entity.Theatres;
 import com.example.BookMyShow.Services.CityServiceImpl;
 import com.example.BookMyShow.Services.TheatreService;
+import com.example.BookMyShow.Services.TheatreServiceImpl;
 
 @RestController
 @RequestMapping("/theatre/v1")

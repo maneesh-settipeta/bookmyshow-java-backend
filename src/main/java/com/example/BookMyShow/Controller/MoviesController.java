@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.BookMyShow.Services.MovieService;
+import com.example.BookMyShow.Services.MovieServiceImpl;
 import com.example.BookMyShow.Entity.Movies;
 
 @RestController
