@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.BookMyShow.Entity.Cities;
+import com.example.BookMyShow.Entity.City;
 import com.example.BookMyShow.Repository.CitiesRepository;
 
 @Service
@@ -15,11 +15,11 @@ public class CityServiceImpl implements CityService{
 	@Autowired
 	private CitiesRepository citiesRepository;
 	
-	public ArrayList<Cities> addCities(ArrayList<Cities> cities) {
-		return (ArrayList<Cities>) citiesRepository.saveAll(cities);
+	public ArrayList<City> addCities(ArrayList<City> cities) {
+		return (ArrayList<City>) citiesRepository.saveAll(cities);
 	}
 	
-	public List<Cities> findAllCities(){
+	public List<City> findAllCities(){
 		return citiesRepository.findAll();
 	}
 	

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.BookMyShow.Entity.Cities;
+import com.example.BookMyShow.Entity.City;
 import com.example.BookMyShow.Services.CityService;
 
 @RestController
@@ -27,15 +27,15 @@ public class CityController {
 	}
 	
 	@PostMapping("/createCities")
-	public ResponseEntity<ArrayList<Cities>> createCity(@RequestBody ArrayList<Cities> cities){
-		ArrayList<Cities> savedCities = cityService.addCities(cities);
+	public ResponseEntity<ArrayList<City>> createCity(@RequestBody ArrayList<City> cities){
+		ArrayList<City> savedCities = cityService.addCities(cities);
 		return ResponseEntity.ok(savedCities);
 	}
 	
 	@GetMapping("/cities")
-	public ResponseEntity<List<Cities>> getAllCities(){
+	public ResponseEntity<List<City>> getAllCities(){
 		System.out.println("Coming");	
-		List<Cities> cities = cityService.findAllCities();
+		List<City> cities = cityService.findAllCities();
 		return ResponseEntity.ok(cities);
 	}
 	

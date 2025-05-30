@@ -6,14 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.BookMyShow.Entity.Theatres;
-import com.example.BookMyShow.Services.CityServiceImpl;
 import com.example.BookMyShow.Services.TheatreService;
-import com.example.BookMyShow.Services.TheatreServiceImpl;
 
 @RestController
 @RequestMapping("/theatre/v1")
@@ -38,5 +37,12 @@ public class TheatreController {
 		List<Theatres> getTheatres = theatreService.findAllTheatres();
 		return ResponseEntity.ok(getTheatres);
 	}
+	
+	@PutMapping("/theatres")
+	public ResponseEntity<String> updateMovieIdByTheatreIdController(@RequestBody Theatres theatres){
+		theatreService.updateMovieIdByTheatreId(theatres);
+		return ResponseEntity.ok("Theatres got updated");
+		}
+	
 	
 }

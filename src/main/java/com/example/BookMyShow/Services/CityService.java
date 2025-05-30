@@ -3,10 +3,10 @@ package com.example.BookMyShow.Services;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.example.BookMyShow.Entity.Cities;
+import com.example.BookMyShow.Entity.City;
 
 public interface CityService {
 
-	public ArrayList<Cities> addCities(ArrayList<Cities> cities);
-	public List<Cities> findAllCities();
+	public ArrayList<City> addCities(ArrayList<City> cities);
+	public List<City> findAllCities();
 }

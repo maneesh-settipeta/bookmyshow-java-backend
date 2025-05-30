@@ -1,46 +1,64 @@
 package com.example.BookMyShow.Entity;
 
-import java.util.List;
 
+
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.SequenceGenerator;
+
 
 @Entity
-
-
+@Table(name = "movies")
 public class Movies {
-	
-//	@ManyToMany
-//	@JoinTable(
-//			name="movie_theatre",
-//			joinColumns = @JoinColumn(name="movie_id")
-//			,inverseJoinColumns = @JoinColumn(name="theatre_id"))
-//	private List<Theatres> theatres;
-//	
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column(name="movie_id")
 	private Integer movieId;
-	private String movieName;
 	
-	private List<Integer> theatres;
-	public Integer getMovieId() {
-		return movieId;
-	}
-	public void setMovieId(Integer movieId) {
-		this.movieId = movieId;
-	}
-	public String getMovieName() {
-		return movieName;
-	}
-	public void setMovieName(String movieName) {
-		this.movieName = movieName;
-	}
+	@JsonProperty("movie_name")
+	@Column(name="movie_name")
+	private String movieName;
+
+	@Column(name="theatre_id")
+	@JsonProperty("theatre_id")
+	private Integer theatreId;
+
 	public Movies() {
 		
 	}
+
+	public Integer getMovieId() {
+		return movieId;
+	}
+
+	public void setMovieId(Integer movieId) {
+		this.movieId = movieId;
+	}
+
+	public String getMovieName() {
+		return movieName;
+	}
+
+	public void setMovieName(String movieName) {
+		this.movieName = movieName;
+	}
+
+	public Integer getTheatreId() {
+		return theatreId;
+	}
+
+	public void setTheatreId(Integer theatreId) {
+		this.theatreId = theatreId;
+	}
+
+
 }

@@ -26,6 +26,9 @@ public class TheatreServiceImpl implements TheatreService {
 	public List<Theatres> findAllTheatres(){
 		return theatreRepository.findAll();
 				}
+	public void updateMovieIdByTheatreId(Theatres theatres) {
+		
+	}
 	
 	
 }
