@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.BookMyShow.Services.MovieService;
@@ -36,6 +37,18 @@ public class MoviesController {
 		List<Movies> findAllMovies = movieService.findAllMovies();
 		return ResponseEntity.ok(findAllMovies);
 	}
+	
+	@GetMapping("/movie/explore")
+	public ResponseEntity<List<Movies>> findMoviesByCityController(@RequestParam("cityId") Integer cityId){
+		List<Movies> findMovies = movieService.findAllMoviesByCityId(cityId);
+		return ResponseEntity.ok(findMovies);
+	}
+	
+//	@GetMapping("/movie/explore/search")
+//	public ResponseEntity<List<Movies>> findAllMoviesController(@RequestParam("movieId") Integer movieId, @RequestParam("cityId")Integer cityId){
+//		List<Movies> findAllMovies = movieService.findAllMovies(movieId,cityId);
+//		return ResponseEntity.ok(findAllMovies);
+//	}
 	
 	
 

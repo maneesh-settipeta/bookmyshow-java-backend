@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.BookMyShow.Entity.City;
+import com.example.BookMyShow.Entity.Movies;
 import com.example.BookMyShow.Repository.CitiesRepository;
 
 @Service
@@ -23,5 +24,6 @@ public class CityServiceImpl implements CityService{
 		return citiesRepository.findAll();
 	}
 	
+		
 
 }

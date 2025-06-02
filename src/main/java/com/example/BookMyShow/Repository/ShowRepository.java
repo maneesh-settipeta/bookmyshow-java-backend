@@ -3,9 +3,11 @@ package com.example.BookMyShow.Repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.BookMyShow.Entity.City;
+import com.example.BookMyShow.Entity.Shows;
+
 
 @Repository
-public interface CitiesRepository extends JpaRepository<City, Integer>{
+public interface ShowRepository extends JpaRepository<Shows, Integer> {
+	
 
 }

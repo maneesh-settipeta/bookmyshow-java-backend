@@ -25,4 +25,16 @@ public class MovieServiceImpl implements MovieService {
 	public List<Movies> findAllMovies(){
 		return movieRepository.findAll();
 	}
+	
+	public List<Movies> findAllMoviesByCityId(Integer cityId){
+	List<Movies> moviesByCityId= movieRepository.findMoviesByCityId(cityId);	
+	return moviesByCityId;
+	}
+	
+//	public List<Movies> findAllMovies(Integer movieId , Integer cityId){
+//		List<Movies>  allMovies = movieRepository.findAllMoviesByCityIdAndMovieId(movieId,cityId);
+//		return allMovies;
+//				}
+	
+	
 }

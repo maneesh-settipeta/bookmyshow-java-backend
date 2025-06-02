@@ -9,4 +9,5 @@ public interface MovieService {
 
 	public List<Movies> addMovies(List<Movies> movies);
 	public List<Movies> findAllMovies();
+	public List<Movies> findAllMoviesByCityId(Integer cityId);
 }
