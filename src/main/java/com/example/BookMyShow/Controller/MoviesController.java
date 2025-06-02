@@ -44,11 +44,11 @@ public class MoviesController {
 		return ResponseEntity.ok(findMovies);
 	}
 	
-//	@GetMapping("/movie/explore/search")
-//	public ResponseEntity<List<Movies>> findAllMoviesController(@RequestParam("movieId") Integer movieId, @RequestParam("cityId")Integer cityId){
-//		List<Movies> findAllMovies = movieService.findAllMovies(movieId,cityId);
-//		return ResponseEntity.ok(findAllMovies);
-//	}
+	@GetMapping("/explore/search")
+	public ResponseEntity<List<Movies>> findAllMoviesController(@RequestParam("movieId") Integer movieId, @RequestParam("cityId")Integer cityId){
+		List<Movies> findAllMovies = movieService.findAllMovies(movieId,cityId);
+		return ResponseEntity.ok(findAllMovies);
+	}
 	
 	
 

@@ -31,10 +31,10 @@ public class MovieServiceImpl implements MovieService {
 	return moviesByCityId;
 	}
 	
-//	public List<Movies> findAllMovies(Integer movieId , Integer cityId){
-//		List<Movies>  allMovies = movieRepository.findAllMoviesByCityIdAndMovieId(movieId,cityId);
-//		return allMovies;
-//				}
+	public List<Movies> findAllMovies(Integer movieId , Integer cityId){
+		List<Movies>  allMovies = movieRepository.findAllMoviesByCityIdAndMovieId(movieId,cityId);
+		return allMovies;	
+	}
 	
 	
 }

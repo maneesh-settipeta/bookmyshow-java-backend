@@ -15,7 +15,7 @@ public interface MovieRepository extends JpaRepository<Movies, Integer> {
 	@Query("SELECT m FROM Movies m JOIN Theatres t ON  m.theatreId = t.theatreId WHERE t.cityId = :cityId")
 	List<Movies> findMoviesByCityId(Integer cityId);
 	
-//	@Query("SELECT m FROM Movies m JOIN Shows s ON m.movieId = s.movieId WHERE  ")
-//	List<Movies> findAllMoviesByCityIdAndMovieId(Integer movieId, Integer cityId);
+	@Query("SELECT s FROM Shows s JOIN FETCH s.movie m WHERE s.cityId = :cityId AND s.movie.movieId = :movieId")
+	List<Movies> findAllMoviesByCityIdAndMovieId(Integer movieId, Integer cityId);
 	
 }

@@ -69,4 +69,17 @@ public class Shows {
 
 	@Column(name="theatre_id")
 	private Integer theatreId;
+	
+	@Column(name="city_id")
+	private Integer cityId;
+	
+	
+	public void setCityId(Integer cityId) {
+		this.cityId=cityId;
+	}
+	
+	public Integer getCityId(Integer getCityId) {
+		return cityId;
+	}
+	
 }
