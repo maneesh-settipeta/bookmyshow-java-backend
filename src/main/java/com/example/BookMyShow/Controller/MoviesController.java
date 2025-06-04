@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.BookMyShow.Services.MovieService;
-
+import com.example.BookMyShow.dto.MovieShowsResponse;
+import com.example.BookMyShow.dto.TheatreShowDto;
 import com.example.BookMyShow.Entity.Movies;
 
 @RestController
 @RequestMapping("/movie/v1")
 public class MoviesController {
-	
 	
 	MovieService movieService;
 	
@@ -45,11 +45,9 @@ public class MoviesController {
 	}
 	
 	@GetMapping("/explore/search")
-	public ResponseEntity<List<Movies>> findAllMoviesController(@RequestParam("movieId") Integer movieId, @RequestParam("cityId")Integer cityId){
-		List<Movies> findAllMovies = movieService.findAllMovies(movieId,cityId);
+	public ResponseEntity<TheatreShowDto> findAllMoviesControllerByMovieIdAndCityId(@RequestParam("movieId") Integer movieId, @RequestParam("cityId")Integer cityId){
+		TheatreShowDto findAllMovies = movieService.findAllMoviesByMovieIdAndCityId(movieId,cityId);
 		return ResponseEntity.ok(findAllMovies);
 	}
 	
-	
-
 }

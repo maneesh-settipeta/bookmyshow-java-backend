@@ -45,8 +45,5 @@ public class ShowsController {
 	}
 	
 	
-//	public ResponseEntity<List<Shows>> 
-	
-	
 
 }
