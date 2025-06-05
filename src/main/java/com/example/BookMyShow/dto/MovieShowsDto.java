@@ -1,22 +1,34 @@
 package com.example.BookMyShow.dto;
 
 import java.sql.Timestamp;
+import java.util.HashMap;
 
 public class MovieShowsDto {
 	
-	private int theatreId;
+	private Integer theatreId;
 	private String theatreName;
+	private HashMap<String, HashMap<String, Integer>> showTimes;
 	
-	public MovieShowsDto(int theatreId, String theatreName, Timestamp showTime, int showId) {
+	
+	public MovieShowsDto(int theatreId, String theatreName) {
 		this.theatreId = theatreId;
 		this.theatreName = theatreName;
-		this.showTime = showTime;
-		this.showId = showId;
 	}
-	public int getTheatreId() {
+	
+	public HashMap<String,HashMap<String, Integer>> getShowTimes() {
+		return showTimes;
+	}
+
+	public void setShowTimes(HashMap<String,HashMap<String,Integer>> hashMap) {
+		this.showTimes = hashMap;
+	}
+
+	public MovieShowsDto() {
+	}
+	public Integer getTheatreId() {
 		return theatreId;
 	}
-	public void setTheatreId(int theatreId) {
+	public void setTheatreId(Integer theatreId) {
 		this.theatreId = theatreId;
 	}
 	public String getTheatreName() {
@@ -25,19 +37,5 @@ public class MovieShowsDto {
 	public void setTheatreName(String theatreName) {
 		this.theatreName = theatreName;
 	}
-	public Timestamp getShowTime() {
-		return showTime;
-	}
-	public void setShowTime(Timestamp showTime) {
-		this.showTime = showTime;
-	}
-	public int getShowId() {
-		return showId;
-	}
-	public void setShowId(int showId) {
-		this.showId = showId;
-	}
-	private Timestamp showTime;
-	private int showId;
 
 }

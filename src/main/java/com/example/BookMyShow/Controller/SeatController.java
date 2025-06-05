@@ -22,7 +22,6 @@ public class SeatController {
 	@Autowired
 	SeatService seatService;
 	
-	
 	public SeatController(SeatService seatService) {
 		this.seatService = seatService;
 	}

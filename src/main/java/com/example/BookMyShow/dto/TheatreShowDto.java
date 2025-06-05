@@ -5,19 +5,20 @@ import java.util.List;
 
 public class TheatreShowDto {
 	
-	private int movieId;
+	private Integer movieId;
 	private String movieName;
 	private String cityName;
 	private List<MovieShowsDto> movieShows;
 	
 	
-	public void addMovieShows(MovieShowsDto show) {
-		this.movieShows.add(show);
+	public void addMovieShows(List<MovieShowsDto> show) {
+		this.movieShows.addAll(show);
 	}
-	public int getMovieId() {
+	public Integer getMovieId() {
 		return movieId;
 	}
-	public void setMovieId(int movieId) {
+	
+	public void setMovieId(Integer movieId) {
 		this.movieId = movieId;
 	}
 	public String getMovieName() {
@@ -26,7 +27,7 @@ public class TheatreShowDto {
 	public void setMovieName(String movieName) {
 		this.movieName = movieName;
 	}
-	public TheatreShowDto(int movieId, String movieName, String cityName) {
+	public TheatreShowDto(Integer movieId, String movieName, String cityName) {
 	this.movieId = movieId;
 	this.movieName = movieName;
 	this.cityName = cityName;

@@ -4,18 +4,21 @@ import java.sql.Timestamp;
 
 public class MovieShowsResponse {
 	
-	private int movieId;
+	private Integer movieId;
 	private String movieName;
 	private Timestamp showTime;
-	private int showId;
-	private int theatreId;
+	private Integer showId;
+	private Integer theatreId;
 	private String theatreName;
 	private String cityName;
-	
+
 	public MovieShowsResponse() {
+		
 	}
 
-	public MovieShowsResponse(int movieId, String movieName, Timestamp showTime, int showId, int theatreId,
+    
+
+	public MovieShowsResponse(Integer movieId, String movieName, Timestamp showTime, Integer showId, Integer theatreId,
 			String theatreName, String cityName) {
 		this.movieId = movieId;
 		this.movieName = movieName;
@@ -24,50 +27,41 @@ public class MovieShowsResponse {
 		this.theatreId = theatreId;
 		this.theatreName = theatreName;
 		this.cityName = cityName;
-	}
-
-//	public int getSeatId() {
-//		return seatId;
-//	}
-//
-//
-//	public void setSeatId(int seatId) {
-//		this.seatId = seatId;
-//	}
-//
-//
-//	public String getSeatNumber() {
-//		return seatNumber;
-//	}
-//
-//
-//	public void setSeatNumber(String seatNumber) {
-//		this.seatNumber = seatNumber;
-//	}
+			}
 
 
-	public int getMovieId() {
+
+	
+
+
+	public Integer getMovieId() {
 		return movieId;
 	}
-	public void setMovieId(int movieId) {
+	
+	public void setMovieId(Integer movieId) {
 		this.movieId = movieId;
 	}
+	
 	public String getMovieName() {
 		return movieName;
 	}
+	
 	public void setMovieName(String movieName) {
 		this.movieName = movieName;
 	}
+	
 	public String getCityName() {
 		return cityName;
 	}
+	
 	public void setCityName(String cityName) {
 		this.cityName = cityName;
 	}
-	public int getTheatreId() {
+	public Integer getTheatreId() {
 		return theatreId;
 	}
-	public void setTheatreId(int theatreId) {
+	
+	public void setTheatreId(Integer theatreId) {
 		this.theatreId = theatreId;
 	}
 	public String getTheatreName() {
@@ -82,10 +76,10 @@ public class MovieShowsResponse {
 	public void setShowTime(Timestamp showTime) {
 		this.showTime = showTime;
 	}
-	public int getShowId() {
+	public Integer getShowId() {
 		return showId;
 	}
-	public void setShowId(int showId) {
+	public void setShowId(Integer showId) {
 		this.showId = showId;
 	}
 
@@ -95,8 +89,9 @@ public class MovieShowsResponse {
 	public String toString() {
 		return "MovieShowsResponse [movieId=" + movieId + ", movieName=" + movieName + ", showTime=" + showTime
 				+ ", showId=" + showId + ", theatreId=" + theatreId + ", theatreName=" + theatreName + ", cityName="
-				+ cityName + ",]";
+				+ cityName + "]";
 	}
+
 	
 
 }

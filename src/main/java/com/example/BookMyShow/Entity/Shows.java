@@ -78,7 +78,7 @@ public class Shows {
 		this.cityId=cityId;
 	}
 	
-	public Integer getCityId(Integer getCityId) {
+	public Integer getCityId() {
 		return cityId;
 	}
 	

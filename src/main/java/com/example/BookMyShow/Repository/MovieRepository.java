@@ -3,6 +3,7 @@ package com.example.BookMyShow.Repository;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import com.example.BookMyShow.Entity.Movies;
 import com.example.BookMyShow.dto.MovieShowsResponse;
@@ -26,11 +27,22 @@ public interface MovieRepository extends JpaRepository<Movies, Integer> {
 //		       " WHERE show.movieId = :movieId AND show.cityId = :cityId")
 	
 	@Query("SELECT new com.example.BookMyShow.dto.MovieShowsResponse(" +
-		       " m.movieId, m.movieName, s.showTime, s.showId , t.theatreId , t.theatreName , c.cityName)" +  
-		       " FROM Movies m " +
-		       "JOIN Shows s ON m.movieId = s.movieId " +
-		       "JOIN Theatres t ON s.theatreId = t.theatreId " +
-		       "JOIN City c ON s.cityId = c.cityId " +
-		       "WHERE s.movieId = :movieId AND s.cityId = :cityId")
+		       "movie.movieId, movie.movieName, show.showTime, show.showId, " +
+		       "theatre.theatreId, theatre.theatreName, city.cityName) " +
+		       "FROM Movies movie " +
+		       "JOIN Shows show ON movie.movieId = show.movieId " +
+		       "JOIN Theatres theatre ON show.theatreId = theatre.theatreId " +
+		       "JOIN City city ON show.cityId = city.cityId " +
+		       "WHERE show.movieId = :movieId AND show.cityId = :cityId")
 		List<MovieShowsResponse> findAllMoviesByCityIdAndMovieId(Integer movieId, Integer cityId);
+	
+//	@Query("SELECT new com.example.BookMyShow.dto.MovieShowsResponse(" +
+//		       "movie.movieId, movie.movieName, show.showTime, show.showId, " +
+//		       "theatre.theatreId, theatre.theatreName, city.cityName) " +
+//		       "FROM Movies movie " +
+//		       "JOIN Shows show ON movie.movieId = show.movieId " +
+//		       "JOIN Theatres theatre ON show.theatreId = theatre.theatreId " +
+//		       "JOIN City city ON show.cityId = city.cityId " +
+//		       "WHERE show.movieId = :movieId AND show.cityId = :cityId")
+//		List<MovieShowsResponse> findAllMoviesByCityIdAndMovieId(Integer movieId, Integer cityId);
 }
