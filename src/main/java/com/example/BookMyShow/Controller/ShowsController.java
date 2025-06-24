@@ -41,6 +41,7 @@ public class ShowsController {
 	@GetMapping("/shows")
 	public ResponseEntity<List<Shows>> findAllShows(){
 		List<Shows> fetchAllShows = showService.findAllShows();
+		System.out.println("shows.findAllShows");
 		return ResponseEntity.ok(fetchAllShows);
 	}
 	

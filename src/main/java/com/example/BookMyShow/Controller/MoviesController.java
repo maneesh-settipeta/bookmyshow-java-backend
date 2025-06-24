@@ -1,6 +1,7 @@
 package com.example.BookMyShow.Controller;
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +15,7 @@ import com.example.BookMyShow.Services.MovieService;
 import com.example.BookMyShow.dto.MovieShowsResponse;
 import com.example.BookMyShow.dto.TheatreShowDto;
 import com.example.BookMyShow.Entity.Movies;
+
 
 @RestController
 @RequestMapping("/movie/v1")
@@ -47,6 +49,7 @@ public class MoviesController {
 	@GetMapping("/explore/search")
 	public ResponseEntity<TheatreShowDto> findAllMoviesControllerByMovieIdAndCityId(@RequestParam("movieId") Integer movieId, @RequestParam("cityId")Integer cityId){
 		TheatreShowDto findAllMovies = movieService.findAllMoviesByMovieIdAndCityId(movieId,cityId);
+	System.out.println("MovieApiTriggred");
 		return ResponseEntity.ok(findAllMovies);
 	}
 	

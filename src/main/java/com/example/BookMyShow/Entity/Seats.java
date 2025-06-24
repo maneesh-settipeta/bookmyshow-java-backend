@@ -11,13 +11,29 @@ import jakarta.persistence.Table;
 
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.SequenceGenerator;
 
 
 @Entity
 @Table(name = "seats")
 public class Seats {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="seat_id")
+	private Integer seatId;
+
+	@Column(name="show_id")
+	private Integer showId;
+
+	@Column(name="seat_number")
+	private String seatNumber;
+
+	@Column(name="seat_row")
+	private String seatRow;
+
+	@Column(name="seat_status")
+	private String seatStatus;
+	
 	public Seats() {
 	}
 
@@ -45,14 +61,23 @@ public class Seats {
 		this.seatNumber = seatNumber;
 	}
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="seat_id")
-	private Integer seatId;
+	public String getSeatRow() {
+		return seatRow;
+	}
 
-	@Column(name="show_id")
-	private Integer showId;
+	public void setSeatRow(String seatRow) {
+		this.seatRow = seatRow;
+	}
 
-	@Column(name="seat_number")
-	private String seatNumber;
+	public String getSeatStatus() {
+		return seatStatus;
+	}
+
+	public void setSeatStatus(String seatStatus) {
+		this.seatStatus = seatStatus;
+	}
+	
+	
+
+
 }

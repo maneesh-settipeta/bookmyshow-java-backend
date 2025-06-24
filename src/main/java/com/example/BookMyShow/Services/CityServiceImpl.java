@@ -23,7 +23,6 @@ public class CityServiceImpl implements CityService{
 	public List<City> findAllCities(){
 		return citiesRepository.findAll();
 	}
-	
 		
 
 }

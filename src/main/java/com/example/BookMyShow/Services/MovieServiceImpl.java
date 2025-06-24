@@ -8,6 +8,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 
+import lombok.extern.slf4j.Slf4j;
 import org.hibernate.mapping.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,7 @@ import com.example.BookMyShow.Repository.MovieRepository;
 import com.example.BookMyShow.dto.MovieShowsDto;
 import com.example.BookMyShow.dto.MovieShowsResponse;
 import com.example.BookMyShow.dto.TheatreShowDto;
+
 
 @Service
 public class MovieServiceImpl implements MovieService {
@@ -43,7 +45,7 @@ public class MovieServiceImpl implements MovieService {
 	
 	
 	public TheatreShowDto findAllMoviesByMovieIdAndCityId(Integer movieId, Integer cityId) {
-		System.out.println(movieId+" "+cityId);
+		System.out.println(movieId+" "+cityId+ "MovieApiTriggred");
 	    List<MovieShowsResponse> results = movieRepository.findAllMoviesByCityIdAndMovieId(movieId, cityId);
 	    System.out.println(results);
 	    if (results.isEmpty()) return null;
